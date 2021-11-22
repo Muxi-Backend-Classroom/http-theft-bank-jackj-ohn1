@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+        "io/ioutil"
 )
 
 func main() {
@@ -33,7 +34,8 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+        body :=ioutil. ReadAll(respect.Body)
 	passport := resp.Header.Get("passport")
-	fmt.Println(passport)
+	fmt.Println(string(body))
 	defer resp.Body.Close()
 }
