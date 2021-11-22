@@ -40,6 +40,10 @@ func main() {
 	resp, err := http.DefaultClient.Do(req)
 	Error(err)
 	answer, err := ioutil.ReadAll(resp.Body)
+	var z = false
+	if z {
+		fmt.Println(answer)
+	}
 	Error(err)
 	//fmt.Println(string(answer))
 	defer resp.Body.Close()
