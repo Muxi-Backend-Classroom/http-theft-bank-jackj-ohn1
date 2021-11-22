@@ -63,13 +63,7 @@ func main() {
 	Error(err)
 
 	//解码之后再写入
-	err = ioutil.WriteFile("./虹膜.jpg", content, 0777)
-	if err != nil {
-		fmt.Println("写入失败！")
-		panic(err)
-	} else {
-		fmt.Println("写入成功！")
-	}
+	_ = ioutil.WriteFile("./虹膜.jpg", content, 0777)
 
 	defer resp.Body.Close()
 
