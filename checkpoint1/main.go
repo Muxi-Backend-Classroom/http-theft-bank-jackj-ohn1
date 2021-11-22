@@ -34,8 +34,8 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-        body :=ioutil. ReadAll(respect.Body)
-	passport := resp.Header.Get("passport")
+	body, _ := ioutil.ReadAll(resp.Body)
 	fmt.Println(string(body))
+
 	defer resp.Body.Close()
 }
