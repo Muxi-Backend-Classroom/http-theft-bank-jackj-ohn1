@@ -35,7 +35,7 @@ func main() {
 	Error(err)
 	answer, err := ioutil.ReadAll(resp.Body)
 	Error(err)
-	fmt.Println(string(answer))
+	//fmt.Println(string(answer))
 	defer resp.Body.Close()
 
 	//下载图片
@@ -57,7 +57,7 @@ func main() {
 
 	//读取文件中的内容，并进行解码
 	tmp, err := ioutil.ReadFile("./虹膜.txt")
-	fmt.Println(len(tmp))
+	//fmt.Println(len(tmp))
 	Error(err)
 	content, err := base64.StdEncoding.DecodeString(string(tmp))
 	Error(err)
