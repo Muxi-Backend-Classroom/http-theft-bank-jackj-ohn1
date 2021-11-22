@@ -24,18 +24,10 @@ func main() {
 	client := &http.Client{}
 	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/code"
 
-	req, err := http.NewRequest("GET", url, nil)
+	req, _ := http.NewRequest("GET", url, nil)
 
 	req.Header.Add("code", "yyj")
-	if err != nil {
-		fmt.Println(err)
-	}
-	resp, err := client.Do(req)
-	if err != nil {
-		fmt.Println(err)
-	}
+	resp, _ := client.Do(req)
 	body, _ := ioutil.ReadAll(resp.Body)
 	fmt.Println(string(body))
-
-	defer resp.Body.Close()
 }
