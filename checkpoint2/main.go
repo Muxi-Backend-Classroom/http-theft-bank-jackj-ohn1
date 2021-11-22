@@ -37,6 +37,9 @@ func main() {
 		fmt.Println(err)
 	}
 	content, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(content), err)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(content))
 	defer resp.Body.Close()
 }
