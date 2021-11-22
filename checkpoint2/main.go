@@ -22,7 +22,7 @@ func main() {
 	// write your code below
 	// ...*/
 	client := &http.Client{}
-	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/code"
+	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/secret_key"
 
 	req, _ := http.NewRequest("GET", url, nil)
 
