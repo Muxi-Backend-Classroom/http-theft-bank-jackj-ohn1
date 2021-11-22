@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/Grand-Theft-Auto-In-CCNU-MUXI/hacker-support/httptool"
+	"net/http"
 )
 
 func main() {
-	req, err := httptool.NewRequest(
+	/*req, err := httptool.NewRequest(
 		"",
 		"",
 		"",
@@ -19,5 +19,21 @@ func main() {
 	fmt.Println(req)
 
 	// write your code below
-	// ...
+	// ...*/
+	client := &http.Client{}
+	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/code"
+
+	req, err := http.NewRequest("GET", url, nil)
+
+	req.Header.Add("code", "yyj")
+	if err != nil {
+		fmt.Println(err)
+	}
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println(err)
+	}
+	passport := resp.Header.Get("passport")
+	fmt.Println(passport)
+	defer resp.Body.Close()
 }
