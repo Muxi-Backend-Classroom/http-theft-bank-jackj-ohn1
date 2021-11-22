@@ -65,7 +65,7 @@ func main() {
 	tmp, err := ioutil.ReadFile("./虹膜.txt")
 	//fmt.Println(len(tmp))
 	Error(err)
-	content, err := base64.StdEncoding.DecodeString(string(tmp))
+	_, err := base64.StdEncoding.DecodeString(string(tmp))
 	Error(err)
 
 	//解码之后再写入
