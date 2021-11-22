@@ -10,6 +10,12 @@ import (
 	"os"
 )
 
+func Error(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
 func main() {
 	/*req, err := httptool.NewRequest(
 		"",
